@@ -7,12 +7,12 @@ describe('<Event /> component', () => {
   let EventWrapper;
 
   beforeAll(() => {  
-    const eventDetail=mockData[0];
-    EventWrapper = shallow(<Event event={eventDetail} />);
+    let eventDetail={ mockData };
+    EventWrapper = shallow(<Event event= { eventDetail } />);
   });
 
   test('renders a list of details', () => {
-    expect(EventWrapper.find('.event_container')).toHaveLength(1);
+    expect(EventWrapper.find('.Event')).toHaveLength(1);
   });
 
   test('render show event details', () => {
