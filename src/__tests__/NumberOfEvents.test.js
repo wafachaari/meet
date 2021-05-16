@@ -9,7 +9,7 @@ describe('<NumberOfEvents /> component', () => {
   beforeAll(() => {
        NumberOfEventsWrapper = shallow(<NumberOfEvents />);
   });
-  //check if component have a txtbox
+  
   test('render text input', () => {
     expect(NumberOfEventsWrapper.find('.number')).toHaveLength(1);
   });

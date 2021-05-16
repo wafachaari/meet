@@ -7,7 +7,6 @@ class NumberOfEvents extends Component {
 
   handleLength = (event) => {
     const number = event.target.value;
-
     if (number <= 0) {
       this.setState({
         eventsPerPage: number,
@@ -16,7 +15,6 @@ class NumberOfEvents extends Component {
     } else {
       this.setState({
         eventsPerPage: number,
-
       });
     }
   }
@@ -24,7 +22,7 @@ class NumberOfEvents extends Component {
   render() {
     let { eventsPerPage } = this.state;
     return (
-      <div className="numberEvents">
+      <div className="NumberOfEvents">
         <h1>choose number</h1>
         <input
           type="text"

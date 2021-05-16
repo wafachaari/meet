@@ -30,7 +30,7 @@ class CitySearch extends Component {
           onChange={this.handleInputChanged}
         />
 
-        
+
         <ul className="suggestions">
           {this.state.suggestions.map((suggestion) => (
             <li
