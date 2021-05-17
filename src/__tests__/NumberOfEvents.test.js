@@ -7,7 +7,7 @@ import { mockData } from "../mock-data";
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsWrapper;
   beforeAll(() => {
-       NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => {}} />);
+       NumberOfEventsWrapper = shallow(<NumberOfEvents updateEventCount={() => {}} />);
   });
   
   test('render text input', () => {

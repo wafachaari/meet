@@ -7,6 +7,7 @@ class NumberOfEvents extends Component {
 
   handleLength = (event) => {
     const number = event.target.value;
+    console.log(number);
     if (number <= 0) {
       this.setState({
         eventsPerPage: number,
@@ -17,11 +18,11 @@ class NumberOfEvents extends Component {
         eventsPerPage: number,
       });
     }
-  //  this.props.updateEventsNumber(number);
+    this.props.updateEventCount(number);
   }
 
   render() {
-    let { eventsPerPage } = this.state;
+   // let { eventsPerPage } = this.state;
     return (
       <div className="NumberOfEvents">
         <h1>choose number</h1>
@@ -29,11 +30,10 @@ class NumberOfEvents extends Component {
           type="text"
           className="number"
           placeholder="6"
-          value={eventsPerPage}
+          value={this.state.eventsPerPage}
           onChange={this.handleLength}
         />
-        <ul className="numberlist">
-        </ul>
+        
       </div>
 
     );
