@@ -7,7 +7,7 @@ class NumberOfEvents extends Component {
 
   handleLength = (event) => {
     const number = event.target.value;
-    console.log(number);
+
     if (number <= 0) {
       this.setState({
         eventsPerPage: number,
@@ -16,8 +16,9 @@ class NumberOfEvents extends Component {
     } else {
       this.setState({
         eventsPerPage: number,
-      });
+      });   
     }
+    console.log(number);
     this.props.updateEventCount(number);
   }
 

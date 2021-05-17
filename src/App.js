@@ -52,7 +52,7 @@ class App extends Component {
     this.setState({
       eventsPerPage: eventCount
     });
-
+    console.log(eventCount);
   }
 
   render() {
