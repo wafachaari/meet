@@ -9,7 +9,7 @@ import "./nprogress.css";
 
 import { getEvents, extractLocations } from './api';
 class App extends Component {
-  state = {
+  state = {currentLocation: 'all',
     events: [],
     locations: [],
     eventsPerPage: 6,
@@ -41,18 +41,21 @@ class App extends Component {
         events.filter((event) => event.location === location);
       const { eventsPerPage } = this.state;
       this.setState({
-        events: locationEvents.slice(0, eventsPerPage)
+        events: locationEvents.slice(0, eventsPerPage),
+        currentLocation: location
       }); 
       //console.log(events);
+      
     });
 
   }
   updateEventCount = (eventCount) => {
-
+    const { currentLocation } = this.state;
     this.setState({
       eventsPerPage: eventCount
     });
     console.log(eventCount);
+    this.updateEvents(currentLocation);
   }
 
   render() {
