@@ -26,7 +26,7 @@ class NumberOfEvents extends Component {
    // let { eventsPerPage } = this.state;
     return (
       <div className="NumberOfEvents">
-        <h1>choose number</h1>
+      
         <input
            type="number"
           className="number"
