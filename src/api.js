@@ -1,8 +1,6 @@
 import { mockData } from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
-
-
 export const extractLocations = (events) => {
   var extractLocations = events.map((event) => event.location);
   var locations = [...new Set(extractLocations)];
@@ -22,7 +20,7 @@ const checkToken = async (accessToken) => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    'https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+    "https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/token/"  + encodeCode
   )
     .then((res) => {
       return res.json();
@@ -48,7 +46,7 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = 'https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
+    const url = "https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/get-events/"  + token;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);

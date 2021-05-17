@@ -3,7 +3,7 @@ import CitySearch from './CitySearch';
 import './App.css';
 import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
-import Event from './Event';
+//import Event from './Event';
 import { Component } from 'react';
 import "./nprogress.css";
 
