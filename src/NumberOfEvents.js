@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
   state = {
-    eventsPerPage: 32,
+    eventsPerPage: 6,
   };
 
   handleLength = (event) => {
@@ -28,7 +28,7 @@ class NumberOfEvents extends Component {
         <input
           type="text"
           className="number"
-          placeholder="32"
+          placeholder="6"
           value={eventsPerPage}
           onChange={this.handleLength}
         />

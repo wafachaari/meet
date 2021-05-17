@@ -24,9 +24,9 @@ describe('<NumberOfEvents /> component', () => {
     NumberOfEventsWrapper.setState({
       eventsPerPage: '5'
     });
-    const eventObject = { target: { value: '32' } };
+    const eventObject = { target: { value: '6' } };
     NumberOfEventsWrapper.find('.number').simulate('change', eventObject);
-    expect(NumberOfEventsWrapper.state('eventsPerPage')).toBe('32');
+    expect(NumberOfEventsWrapper.state('eventsPerPage')).toBe('6');
   });
 
 
