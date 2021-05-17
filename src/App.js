@@ -46,12 +46,19 @@ class App extends Component {
     });
     
   }
+  updateEventCount = eventCount => {
+    
+    this.setState({
+      eventsPerPage: eventCount
+    });
+  
+  }
 
-  render() {
+  render() {   
     return (
-
+      
       <div className="App">
-        <NumberOfEvents eventsPerPage={this.state.eventsPerPage} />
+        <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
 
