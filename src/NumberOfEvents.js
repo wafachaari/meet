@@ -17,6 +17,7 @@ class NumberOfEvents extends Component {
         eventsPerPage: number,
       });
     }
+  //  this.props.updateEventsNumber(number);
   }
 
   render() {

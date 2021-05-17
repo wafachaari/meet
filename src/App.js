@@ -6,12 +6,13 @@ import NumberOfEvents from './NumberOfEvents';
 import Event from './Event';
 import { Component } from 'react';
 import "./nprogress.css";
- 
+
 import { getEvents, extractLocations } from './api';
 class App extends Component {
   state = {
     events: [],
-    locations: []
+    locations: [],
+    eventsPerPage:[]
   }
   componentDidMount() {
     this.mounted = true;
@@ -22,7 +23,7 @@ class App extends Component {
     });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.mounted = false;
   }
 
@@ -36,14 +37,18 @@ class App extends Component {
       });
     });
   }
+ 
+
+
+
   render() {
     return (
 
       <div className="App">
-
+          <NumberOfEvents eventsPerPage={this.state.eventsPerPage}/>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
-
+      
       </div>
     );
   }

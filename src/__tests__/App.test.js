@@ -59,6 +59,8 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(eventsToShow);
     AppWrapper.unmount();
   });
+
+  
   test('get list of all events when user selects "See all cities"', async () => {
     const AppWrapper = mount(<App />);
     const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
@@ -67,4 +69,22 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
+
+
+
+
+
+
+  test('App passes "eventsPerPage" state as a prop to NumberOfEvents', () => {
+    const AppWrapper = mount(<App />);
+    const AppNUmbState = AppWrapper.state('eventsPerPage');
+    expect(AppNUmbState).not.toEqual(undefined);
+    expect(AppWrapper.find(NumberOfEvents).props().eventsPerPage).toEqual(AppNUmbState);
+    AppWrapper.unmount();
+  });
+
+  
+
+
+
 });
