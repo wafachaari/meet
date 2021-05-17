@@ -62,6 +62,7 @@ class App extends Component {
     return (
 
       <div className="App">
+           <h1 className="name">JS MeetApp</h1>
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />

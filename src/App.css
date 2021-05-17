@@ -3,6 +3,7 @@
   text-align: center;
   padding: 2% 5%;
 }
+ 
 
 .App * {
   box-sizing: border-box;
@@ -85,7 +86,7 @@ input[type="number"] {
   position: relative;
 }
 
-.details-btn {
+.show_btn {
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -114,7 +115,7 @@ input[type="number"] {
   overflow-x: hidden;
 }
 
-.numberOfEvents {
+.NumberOfEvents {
   width: 200px;
   margin: 20px auto;
   text-align: center;

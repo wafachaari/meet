@@ -28,7 +28,7 @@ class NumberOfEvents extends Component {
       <div className="NumberOfEvents">
         <h1>choose number</h1>
         <input
-          type="text"
+           type="number"
           className="number"
           placeholder="6"
           value={this.state.eventsPerPage}
