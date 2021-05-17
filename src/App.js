@@ -12,13 +12,20 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
-    eventsPerPage:[]
+    eventsPerPage: 6,
   }
   componentDidMount() {
     this.mounted = true;
+    const { eventsPerPage } = this.state;
+
     getEvents().then((events) => {
       if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
+        this.setState({ 
+          events: events.slice(0,eventsPerPage),
+           locations: extractLocations(events)
+        
+        
+        });
       }
     });
   }
@@ -32,23 +39,22 @@ class App extends Component {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
+        const {eventsPerPage} = this.state;
       this.setState({
-        events: locationEvents
-      });
+        events: locationEvents.slice(0,eventsPerPage)
+      });console.log(events);
     });
+    
   }
- 
-
-
 
   render() {
     return (
 
       <div className="App">
-          <NumberOfEvents eventsPerPage={this.state.eventsPerPage}/>
+        <NumberOfEvents eventsPerPage={this.state.eventsPerPage} />
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
-      
+
       </div>
     );
   }

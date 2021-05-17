@@ -22,7 +22,7 @@ describe('<NumberOfEvents /> component', () => {
 
   test('change state when text input changes', () => {
     NumberOfEventsWrapper.setState({
-      eventsPerPage: '5'
+      eventsPerPage: '6'
     });
     const eventObject = { target: { value: '6' } };
     NumberOfEventsWrapper.find('.number').simulate('change', eventObject);
