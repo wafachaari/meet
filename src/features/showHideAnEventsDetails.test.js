@@ -14,24 +14,28 @@ defineFeature(feature, test => {
   });
 
   test('An event element is collapsed by default', ({ given, when, then }) => {
+
     given('the main page has loaded events.', () => {
     });
 
-    when('the user choose a city', () => {
-       AppWrapper.update();
-     
-    });
-
-    then('the user should see the main page', () => {
+    when('he user first views the list of events', () => {
+       
       AppWrapper.update();
       expect(AppWrapper.find('.Event')).toHaveLength(mockData.length);
 
+        });
+
+    then('the user should see the main page', () => {
+      const EventWrapper = AppWrapper.find(Event);
+       expect(AppWrapper.find('.Event')).toHaveLength(mockData.length);
+      expect(EventWrapper.find('.show_event')).toHaveLength(0);
+    
     });
   });
 
   test('User can expand an event to see its details', ({ given, when, then }) => {
-    given('the user see different event', () => {
 
+    given('the user see different event', () => {
     });
 
     when('the user click on the button to expand an event', () => {

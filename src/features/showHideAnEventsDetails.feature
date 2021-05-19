@@ -1,7 +1,7 @@
 Feature: Show/Hide an events details
 Scenario: An event element is collapsed by default
 Given the main page has loaded events.
-When the user choose a city
+When he user first views the list of events
 Then the user should see the main page
 
 Scenario: User can expand an event to see its details
