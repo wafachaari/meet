@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { ErrorAlert } from './Alert';
 class NumberOfEvents extends Component {
   state = {
     eventsPerPage: 6,
@@ -16,6 +16,7 @@ class NumberOfEvents extends Component {
     } else {
       this.setState({
         eventsPerPage: number,
+        errorText: ''
       });   
     }
     console.log(number);
@@ -26,7 +27,8 @@ class NumberOfEvents extends Component {
    // let { eventsPerPage } = this.state;
     return (
       <div className="NumberOfEvents">
-      
+       <ErrorAlert text={this.state.errorText} />
+     
         <input
            type="number"
           className="number"
