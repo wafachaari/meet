@@ -17,26 +17,25 @@ class NumberOfEvents extends Component {
       this.setState({
         eventsPerPage: number,
         errorText: ''
-      });   
+      });
     }
     console.log(number);
     this.props.updateEventCount(number);
   }
 
   render() {
-   // let { eventsPerPage } = this.state;
+    // let { eventsPerPage } = this.state;
     return (
       <div className="NumberOfEvents">
-       <ErrorAlert text={this.state.errorText} />
-     
         <input
-           type="number"
+          type="number"
           className="number"
           placeholder="6"
           value={this.state.eventsPerPage}
           onChange={this.handleLength}
         />
-        
+        <ErrorAlert text={this.state.errorText} />
+
       </div>
 
     );
