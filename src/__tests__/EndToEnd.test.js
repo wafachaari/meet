@@ -1,21 +1,22 @@
 import puppeteer from 'puppeteer';
+let browser;
+let page;
+beforeAll(async () => {
+  jest.setTimeout(300000);
+  browser = await puppeteer.launch({headless: false });
+  page = await browser.newPage();
+  await page.goto("http://localhost:3000/");
+  await page.waitForSelector('.Event');
+});
+
+afterAll(() => {
+  browser.close();
+});
 
 describe('show/hide an event details', () => {
 
-  let browser;
-  let page;
-  beforeAll(async () => {
-    jest.setTimeout(300000);
-    browser = await puppeteer.launch({headless: false });
-    page = await browser.newPage();
-    await page.goto("http://localhost:3000/");
-    await page.waitForSelector('.Event');
-  });
 
-  afterAll(() => {
-    browser.close();
-  });
-
+ 
   test('An event element is collapsed by default', async () => {
     const eventDetails = await page.$('.Event .show_event');
     expect(eventDetails).toBeNull();
@@ -38,19 +39,8 @@ describe('show/hide an event details', () => {
 
 
 describe('Filter events by city', () => {
-  let browser;
-  let page;
-  beforeAll(async () => {
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
-    await page.goto('http://localhost:3000/');
-    await page.waitForSelector('.Event');
-  });
-
-  afterAll(() => {
-    browser.close();
-  });
-
+ 
+   
   test('By default, when user hasn’t searched for a city, show upcoming events based on the user’s location', async () => {
     const events = await page.$$('.Event');
     expect(events).toHaveLength(3);
