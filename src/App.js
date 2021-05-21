@@ -72,9 +72,10 @@ class App extends Component {
 
       <div className="App">
         <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
-        <OfflineAlert text={this.state.offlinealert} className="offlinealert"/>
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
+        <OfflineAlert text={this.state.offlinealert} className="offlinealert"/>
+       
         <EventList events={this.state.events} />
 
       </div>
