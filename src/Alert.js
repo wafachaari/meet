@@ -24,8 +24,16 @@ class InfoAlert extends Alert {
   constructor(props) {
     super(props);
     this.color = 'blue';
+  } getStyle = () => {
+    return {
+      color: this.color,
+      fontStyle: 'italic',
+      marginTop: '1rem'
+
+    };
+
   }
- 
+
 }
 
 class ErrorAlert extends Alert {
@@ -38,30 +46,31 @@ class ErrorAlert extends Alert {
       color: this.color,
       fontStyle: 'italic',
       marginTop: '3rem'
-      
+
     };
 
-}}
+  }
+}
 class WarningAlert extends Alert {
   constructor(props) {
     super(props);
     this.color = 'orange'
   }
- 
+
 }
 class OfflineAlert extends Alert {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.color="red";
-       
+    this.color = "red";
+
   } getStyle = () => {
     return {
       color: this.color,
       fontStyle: 'italic',
       marginTop: '4rem'
-      
+
     };
+  }
 }
-}
- 
-export { InfoAlert , ErrorAlert , WarningAlert , OfflineAlert };
+
+export { InfoAlert, ErrorAlert, WarningAlert, OfflineAlert };

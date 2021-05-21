@@ -52,7 +52,7 @@ class CitySearch extends Component {
           onChange={this.handleInputChanged}
           onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
- <InfoAlert text={this.state.infoText} className="alert-container" />
+ <InfoAlert text={this.state.infoText}   />
      
 
 <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>

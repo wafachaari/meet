@@ -9,9 +9,9 @@ header {
   font-size: 40px;
   text-align: left;
 }
-
-
-.alert-container{margin-right: 0;}
+ 
+.alert-container{margin-right: 0;
+text-align: right;}
 .App * {
   box-sizing: border-box;
 }
@@ -176,8 +176,8 @@ li {
 .NumberOfEvents {
   width: 200px;
   margin: 20px auto;
-  text-align: center;
-}
+  
+}.alert-container{margin-right: 0;}
 
 .button-wrapper {
   display: grid;
