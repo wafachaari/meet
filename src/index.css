@@ -6,8 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./img/2.png");
-  display: block;
-  position: fixed;
+  
   left: 0;
   top: 0;
   width: 100%;
