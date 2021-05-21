@@ -3,7 +3,6 @@
   text-align: center;
   padding: 2% 5%;
 }
- 
 
 .App * {
   box-sizing: border-box;
@@ -21,12 +20,12 @@ p {
 .display-none {
   display: none;
 }
+
 .showSuggestions {
   display: block;
 }
 
-input[type="text"],
-input[type="number"] {
+input[type="text"], input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
@@ -61,44 +60,49 @@ input[type="number"] {
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
 
-.suggestions > li {
+.suggestions>li {
   text-align: left;
   padding: 8px 6px 8px 10px;
   background-color: #eee;
   cursor: default;
 }
 
-.suggestions > li:last-child {
+.suggestions>li:last-child {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.suggestions > li:hover {
+.suggestions>li:hover {
   background-color: #bcdcdb;
 }
 
-.erroralert{
-  
+.erroralert {}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 15px;
+  grid-column-gap: 50px;
+  grid-row-gap: 10px;
+  width: 100%;
 }
 
-
-.EventList{
-  display: grid;
+li {
+  display: inline-block;
   width: 100%;
-   
-  grid: 15px;
-  padding: 10px;
-  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .Event {
-  padding: 10px 10px 35px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  padding: 15px;
   text-align: left;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   position: relative;
-}/*
+  width: 100%;
+}
+
+/*
 .Event-grid__item {
   display: inline-block;
   width: 33%;
@@ -114,15 +118,19 @@ input[type="number"] {
   width: auto;
   word-break: break-word;
 }*/
+
+ 
 .show_btn {
+  background: url(./img/updown.svg ) no-repeat top left;
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  padding: 5px 8px;
-  border-radius: 4px;
-  outline: none;
+  right: 1px;
+  bottom: 0px;
+  padding: 15px 15px;
+  border: none;
   cursor: pointer;
+  margin: 0 auto;
 }
+
 .show_event {
   margin: 1rem 0;
 }
@@ -137,8 +145,7 @@ input[type="number"] {
   font-size: 14px;
 }
 
-.going,
-.visibility {
+.going, .visibility {
   font-style: italic;
 }
 
@@ -170,10 +177,12 @@ input[type="number"] {
   align-items: center;
   flex-direction: column;
 }
+
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
+
 .recharts-surface {
   overflow: visible;
 }
@@ -199,12 +208,15 @@ input[type="number"] {
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 }
+
 .google-btn:hover {
   box-shadow: 0 0 6px #4285f4;
 }
+
 .google-btn:active {
   background: #1669f2;
 }
+
 .google-icon-wrapper {
   position: absolute;
   margin-top: 1px;
@@ -214,6 +226,7 @@ input[type="number"] {
   border-radius: 2px;
   background-color: #fff;
 }
+
 .google-icon {
   position: absolute;
   margin-top: 11px;
@@ -221,6 +234,7 @@ input[type="number"] {
   width: 18px;
   height: 18px;
 }
+
 .btn-text {
   float: right;
   margin: 11px 11px 0 0;
@@ -229,8 +243,6 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
