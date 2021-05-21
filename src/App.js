@@ -19,7 +19,7 @@ class App extends Component {
   componentDidMount() {
     this.mounted = true;
     const { eventsPerPage } = this.state;
-   // window.addEventListener('online',);
+    // window.addEventListener('online',);
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({
@@ -30,14 +30,14 @@ class App extends Component {
           this.setState({
             offlinealert: ' Cached data is being displayed.'
           })
-        
+
         }
         else {
           this.setState({
             warningText: ''
-           
+
           })
-            }
+        }
       }
     });
   }
@@ -72,10 +72,9 @@ class App extends Component {
 
       <div className="App">
         <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
-         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
-        <OfflineAlert text={this.state.offlinealert} className="alert-container"/>
-       
+        <OfflineAlert text={this.state.offlinealert} className="alert-container" />
         <EventList events={this.state.events} />
 
       </div>
