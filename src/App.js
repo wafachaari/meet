@@ -30,14 +30,14 @@ class App extends Component {
           this.setState({
             offlinealert: 'You\'re currently offline. Cached data is being displayed.'
           })
-          console.log("off");
+        
         }
         else {
           this.setState({
             warningText: ''
            
           })
-          console.log("on"); }
+            }
       }
     });
   }
