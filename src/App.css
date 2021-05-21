@@ -86,7 +86,14 @@ input[type="text"], input[type="number"] {
   grid-row-gap: 10px;
   width: 100%;
 }
-
+@media (max-width: 1000px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }}
+  @media (max-width: 500px) {
+    .list {
+      grid-template-columns:  1fr;
+    }}
 li {
   display: inline-block;
   width: 100%;
