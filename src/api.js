@@ -56,7 +56,12 @@ export const getEvents = async () => {
     NProgress.done();
     return result.data.events;
   }
+  if (!navigator.onLine) {
+    const events = localStorage.getItem('lastEvents');
+    return JSON.parse(events);
+  }
 };
+
 
  export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
@@ -90,3 +95,4 @@ const removeQuery = () => {
     window.history.pushState("", "", newurl);
   }
 };
+

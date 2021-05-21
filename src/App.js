@@ -5,11 +5,13 @@ import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
 //import Event from './Event';
 import { Component } from 'react';
+import { OfflineAlert } from './Alert';
 import "./nprogress.css";
 
 import { getEvents, extractLocations } from './api';
 class App extends Component {
-  state = {currentLocation: 'all',
+  state = {
+    currentLocation: 'all',
     events: [],
     locations: [],
     eventsPerPage: 6,
@@ -17,15 +19,25 @@ class App extends Component {
   componentDidMount() {
     this.mounted = true;
     const { eventsPerPage } = this.state;
-
+   // window.addEventListener('online',);
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({
           events: events.slice(0, eventsPerPage),
           locations: extractLocations(events)
-
-
         });
+        if (!navigator.onLine) {
+          this.setState({
+            offlinealert: 'You\'re currently offline. Cached data is being displayed.'
+          })
+          console.log("off");
+        }
+        else {
+          this.setState({
+            warningText: ''
+           
+          })
+          console.log("on"); }
       }
     });
   }
@@ -43,9 +55,7 @@ class App extends Component {
       this.setState({
         events: locationEvents.slice(0, eventsPerPage),
         currentLocation: location
-      }); 
-      //console.log(events);
-      
+      });
     });
 
   }
@@ -54,7 +64,6 @@ class App extends Component {
     this.setState({
       eventsPerPage: eventCount
     });
- 
     this.updateEvents(currentLocation);
   }
 
@@ -62,11 +71,11 @@ class App extends Component {
     return (
 
       <div className="App">
-          <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
-           <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-      
+        <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
+        <OfflineAlert text={this.state.offlinealert} className="offlinealert"/>
+        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
-         <EventList events={this.state.events} />
+        <EventList events={this.state.events} />
 
       </div>
     );
