@@ -62,10 +62,11 @@ class App extends Component {
     return (
 
       <div className="App">
-           <h1 className="name">JS MeetApp</h1>
+          <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
+           <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+      
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} />
+         <EventList events={this.state.events} />
 
       </div>
     );
