@@ -28,7 +28,7 @@ class App extends Component {
         });
         if (!navigator.onLine) {
           this.setState({
-            offlinealert: 'You\'re currently offline. Cached data is being displayed.'
+            offlinealert: ' Cached data is being displayed.'
           })
         
         }
