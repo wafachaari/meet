@@ -3,15 +3,12 @@
   text-align: center;
   padding: 3% 5%;
   height: 100%;
- 
-   
-  
 }
- header{
-   font-size: 40px;
-   text-align: left;
-  margin-left: 0px;
- }
+
+header {
+  font-size: 40px;
+  text-align: left;
+}
 
 .App * {
   box-sizing: border-box;
@@ -94,22 +91,26 @@ input[type="text"], input[type="number"] {
   grid-column-gap: 50px;
   grid-row-gap: 10px;
   width: 100%;
-  
 }
+
 @media (max-width: 1000px) {
   .list {
     grid-template-columns: 1fr 1fr;
-  }}
-  @media (max-width: 500px) {
-    .list {
-      grid-template-columns:  1fr;
-    }}
+  }
+}
+
+@media (max-width: 500px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
 li {
   display: inline-block;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
-background-color: #E8E8E8;
+  background-color: #E8E8E8;
 }
 
 .Event {
@@ -137,7 +138,6 @@ background-color: #E8E8E8;
   word-break: break-word;
 }*/
 
- 
 .show_btn {
   background: url(./img/updown.svg ) no-repeat top left;
   position: absolute;
