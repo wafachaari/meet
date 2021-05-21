@@ -16,7 +16,7 @@ class Event extends Component {
     const event = this.props.event;
     return (
       <div className="Event">
-
+ 
         <h2> {event.summary}</h2>
         <p>{event.location}</p>
         <button
@@ -33,8 +33,8 @@ class Event extends Component {
               <p className="description">{event.description}</p>
             </div>
           )
-        }
-      </div >
+        }</div>
+      
     );
   }
 }
