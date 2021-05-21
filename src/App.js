@@ -74,7 +74,7 @@ class App extends Component {
         <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
          <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
-        <OfflineAlert text={this.state.offlinealert} className="offlinealert"/>
+        <OfflineAlert text={this.state.offlinealert} className="alert-container"/>
        
         <EventList events={this.state.events} />
 

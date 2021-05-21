@@ -35,7 +35,7 @@ class NumberOfEvents extends Component {
           value={this.state.eventsPerPage}
           onChange={this.handleLength}
         />
-        <ErrorAlert text={this.state.errorText} className="erroralert"/>
+        <ErrorAlert text={this.state.errorText} className="alert-container"/>
 
       </div>
 
