@@ -48,7 +48,7 @@ export const getEvents = async () => {
     
       return events?JSON.parse(events).events:[];;  };
   
-  }
+  
   const token = await getAccessToken();
 
   if (token) {
