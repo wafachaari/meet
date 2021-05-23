@@ -1,6 +1,9 @@
 import React from 'react';
 import CitySearch from './CitySearch';
 import './App.css';
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+} from 'recharts';
 import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
 //import Event from './Event';
@@ -66,7 +69,15 @@ class App extends Component {
     });
     this.updateEvents(currentLocation);
   }
-
+  getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(' ').shift()
+      return {city, number};
+    })
+    return data;
+  };
   render() {
     return (
 
@@ -74,8 +85,21 @@ class App extends Component {
         <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
-        <OfflineAlert text={this.state.offlinealert}   />
-        <EventList events={this.state.events} />
+        <OfflineAlert text={this.state.offlinealert} />
+        <ResponsiveContainer height={400} >
+          <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+            <CartesianGrid />
+            <XAxis type="category" dataKey="city" name="city" />
+            <YAxis
+              allowDecimals={false}
+              type="number"
+              dataKey="number"
+              name="number of events"
+            />
+            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+            <Scatter data={this.getData()} fill="#8884d8" />
+          </ScatterChart>
+        </ResponsiveContainer>    <EventList events={this.state.events} />
 
       </div>
     );

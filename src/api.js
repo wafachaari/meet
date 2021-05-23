@@ -32,7 +32,7 @@ const getToken = async (code) => {
   return access_token;
 };
 
-
+ 
 export const getEvents = async () => {
   NProgress.start();
 
