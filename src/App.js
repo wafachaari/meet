@@ -87,9 +87,8 @@ class App extends Component {
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
         <OfflineAlert text={this.state.offlinealert} />
-        <EventList events={this.state.events} />
-
-        <EventGenre className="data-vis-wrapper">
+      
+        <div className="data-vis-wrapper">
           <EventGenre events={this.state.events} />
           
           <ResponsiveContainer height={400} >
@@ -106,8 +105,9 @@ class App extends Component {
               <Scatter data={this.getData()} fill="#8884d8" />
             </ScatterChart>
           </ResponsiveContainer>
-        </EventGenre>
-      
+        </div>
+        <EventList events={this.state.events} />
+
       </div>
     );
   }
