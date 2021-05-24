@@ -18,6 +18,7 @@ class App extends Component {
     currentLocation: 'all',
     events: [],
     locations: [],
+    showevents: false,
     eventsPerPage: 6,
   }
   componentDidMount() {
@@ -32,14 +33,12 @@ class App extends Component {
         });
         if (!navigator.onLine) {
           this.setState({
-            offlinealert: ' Cached data is being displayed.'
+            offlinealert: 'Cached data is being displayed.'
           })
-
         }
         else {
           this.setState({
             warningText: ''
-
           })
         }
       }
@@ -61,8 +60,8 @@ class App extends Component {
         currentLocation: location
       });
     });
-
   }
+
   updateEventCount = (eventCount) => {
     const { currentLocation } = this.state;
     this.setState({
@@ -79,35 +78,44 @@ class App extends Component {
     })
     return data;
   };
+  downevents = () => {
+    this.setState({
+      showevents: !this.state.showevents
+    })
+  }
+
   render() {
     return (
-
       <div className="App">
         <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
         <OfflineAlert text={this.state.offlinealert} />
-      
-        <div className="data-vis-wrapper">
-          <EventGenre events={this.state.events} />
-          
-          <ResponsiveContainer height={400} >
-            <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-              <CartesianGrid />
-              <XAxis type="category" dataKey="city" name="city" />
-              <YAxis
-                allowDecimals={false}
-                type="number"
-                dataKey="number"
-                name="number of events"
-              />
-              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-              <Scatter data={this.getData()} fill="#8884d8" />
-            </ScatterChart>
-          </ResponsiveContainer>
-        </div>
+        {!this.state.showevents ?
+          <button className="show-events-button" onClick={this.downevents}>show  events</button>
+          :
+          <button className="show-events-button" onClick={this.downevents}>hide events</button>
+        }
+        {this.state.showevents ?
+          <div className="data-vis-wrapper">
+            <EventGenre events={this.state.events} />
+            <ResponsiveContainer height={400} >
+              <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                <CartesianGrid />
+                <XAxis type="category" dataKey="city" name="city" />
+                <YAxis
+                  allowDecimals={false}
+                  type="number"
+                  dataKey="number"
+                  name="number of events"
+                />
+                <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                <Scatter data={this.getData()} fill="#8884d8" />
+              </ScatterChart>
+            </ResponsiveContainer>
+          </div>
+          : null}
         <EventList events={this.state.events} />
-
       </div>
     );
   }
