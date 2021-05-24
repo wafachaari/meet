@@ -86,6 +86,9 @@ input[type="text"], input[type="number"] {
 
 .erroralert {}
 
+.data-vis-wrapper{
+  background-color: hotpink;
+}
 .list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
