@@ -87,8 +87,11 @@ class App extends Component {
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
         <OfflineAlert text={this.state.offlinealert} />
+        <EventList events={this.state.events} />
+
         <EventGenre className="data-vis-wrapper">
           <EventGenre events={this.state.events} />
+          
           <ResponsiveContainer height={400} >
             <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
               <CartesianGrid />
@@ -104,8 +107,7 @@ class App extends Component {
             </ScatterChart>
           </ResponsiveContainer>
         </EventGenre>
-        <EventList events={this.state.events} />
-
+      
       </div>
     );
   }

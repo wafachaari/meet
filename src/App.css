@@ -83,11 +83,9 @@ input[type="text"], input[type="number"] {
 .suggestions>li:hover {
   background-color: #bcdcdb;
 }
-
-.erroralert {}
-
+ 
 .data-vis-wrapper{
-  background-color: hotpink;
+  background-color: black;
 }
 .list {
   display: grid;
