@@ -19,12 +19,12 @@ class NumberOfEvents extends Component {
         errorText: ''
       });
     }
-    console.log(number);
+    
     this.props.updateEventCount(number);
   }
 
   render() {
-    // let { eventsPerPage } = this.state;
+     
     return (
       <div className="NumberOfEvents">
        <label>choose number of events</label>

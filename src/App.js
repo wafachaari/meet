@@ -90,7 +90,7 @@ class App extends Component {
         <header>𝔐𝔢𝔢𝔱𝔄𝔭𝔭</header>
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents eventsPerPage={this.state.eventsPerPage} updateEventCount={this.updateEventCount} />
-        <OfflineAlert text={this.state.offlinealert} />
+
         {!this.state.showevents ?
           <button className="show-events-button" onClick={this.downevents}>show  events</button>
           :
@@ -115,6 +115,7 @@ class App extends Component {
             </ResponsiveContainer>
           </div>
           : null}
+        <OfflineAlert text={this.state.offlinealert} />
         <EventList events={this.state.events} />
       </div>
     );

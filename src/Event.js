@@ -22,15 +22,9 @@ class Event extends Component {
         <h2> {event.summary}</h2>
         <p>{dateTime} @TIMEZONE {event.start.timeZone}</p>
         <p> @ {event.summary} / {event.location}</p>
-        <button
-          className="show_btn"
-          type="text"
-          onClick={() => this.handledetails()}
 
-        >
 
-          {/* /* {!this.state.show ? 'Show Details' : 'Hide Details'}*/}
-        </button>
+
         {
           this.state.show && (
             <div className="show_event">
@@ -38,8 +32,15 @@ class Event extends Component {
               <p className="description">{event.description}</p>
             </div>
           )
-        }</div>
-
+        }
+        <div className="event-button"><button
+          className="show_btn"
+          type="text"
+          onClick={() => this.handledetails()}
+        >
+        </button>
+        </div>
+      </div>
     );
   }
 }

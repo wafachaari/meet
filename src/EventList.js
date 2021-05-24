@@ -6,7 +6,6 @@ class EventList extends Component {
   render() {
 
     const events = this.props.events;
-    //console.log(events);
     return (
       <div className="EventList">
         <ul className="list">

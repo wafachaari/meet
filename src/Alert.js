@@ -28,7 +28,7 @@ class InfoAlert extends Alert {
     return {
       color: this.color,
       fontStyle: 'italic',
-      marginTop: '1rem'
+      
 
     };
 
@@ -45,7 +45,7 @@ class ErrorAlert extends Alert {
     return {
       color: this.color,
       fontStyle: 'italic',
-      marginTop: '3rem'
+      
 
     };
 
@@ -67,7 +67,7 @@ class OfflineAlert extends Alert {
     return {
       color: this.color,
       fontStyle: 'italic',
-      marginTop: '4rem'
+       
 
     };
   }
