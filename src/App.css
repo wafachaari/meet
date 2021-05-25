@@ -64,7 +64,9 @@ input[type="text"], input[type="number"] {
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
-
+.legend{
+ padding: 20px;
+}
 .suggestions>li {
   text-align: left;
   padding: 8px 6px 8px 10px;
@@ -177,8 +179,7 @@ input[type="text"], input[type="number"] {
   margin: 2px auto;
 }
 
-/*.alert-container{margin-right: 0;}*/
-
+ 
 .button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
