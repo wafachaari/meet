@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Legend,Cell, ResponsiveContainer } from 'recharts';
 
 const EventGenre = ({ events }) => {
   const [data, setData] = useState([]);
@@ -39,6 +39,8 @@ const EventGenre = ({ events }) => {
             />
           ))}
         </Pie>
+        <Legend iconSize={10} iconType="triangle" layout="horizontal" verticalAlign="bottom" align="center" />
+                  
       </PieChart>
     </ResponsiveContainer>
   );
