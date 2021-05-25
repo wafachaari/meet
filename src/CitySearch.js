@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { InfoAlert } from './Alert';
 class CitySearch extends Component {
   state = {
-        suggestions: [],
+    suggestions: [],
     query: ' ',
     showSuggestions: false,
     infoText: ''
@@ -48,8 +48,6 @@ class CitySearch extends Component {
           onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
         <InfoAlert text={this.state.infoText} />
-
-
         <ul className="suggestions" style={this.state.showSuggestions ? {} : { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (
             <li
