@@ -19,12 +19,11 @@ class Event extends Component {
     const dateTime = eventISODateTime.toDateString();
     return (
       <div className="Event">
-        <h2> {event.summary}</h2>
-        <p>{dateTime} @TIMEZONE {event.start.timeZone}</p>
-        <p> @ {event.summary} / {event.location}</p>
-
-
-
+        <div>
+          <h2> {event.summary}</h2>
+          <p>{dateTime} @TIMEZONE {event.start.timeZone}</p>
+          <p> @ {event.summary} / {event.location}</p>
+        </div>
         {
           this.state.show && (
             <div className="show_event">
@@ -33,6 +32,7 @@ class Event extends Component {
             </div>
           )
         }
+
         <div className="event-button"><button
           className="show_btn"
           type="text"

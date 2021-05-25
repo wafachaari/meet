@@ -9,9 +9,11 @@ header {
   font-size: 40px;
   text-align: left;
 }
- /*
+
+/*
 .alert-container{margin-right: 0;
 text-align: right;}*/
+
 .App * {
   box-sizing: border-box;
 }
@@ -83,10 +85,9 @@ input[type="text"], input[type="number"] {
 .suggestions>li:hover {
   background-color: #bcdcdb;
 }
- 
-.data-vis-wrapper{
- 
-}
+
+.data-vis-wrapper {}
+
 .list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -108,15 +109,16 @@ input[type="text"], input[type="number"] {
   }
 }
 
-li {
+.li {
   display: inline-block;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
-/*  background-color: #E8E8E8;*/
-box-shadow: 0 9px  blue;
+  box-shadow: 0 9px blue;
+  margin-top: 25px;
 }
-.show-events-button{
+
+.show-events-button {
   display: inline-block;
   padding: 5px 25px;
   font-size: 15px;
@@ -130,6 +132,7 @@ box-shadow: 0 9px  blue;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
+
 .Event {
   margin-bottom: 1rem;
   padding: 15px;
@@ -148,8 +151,11 @@ box-shadow: 0 9px  blue;
   cursor: pointer;
   margin: 0 auto;
 }
-.event-button{  margin-top: 1.5rem;
-  display: flex;}
+
+.event-button {
+  margin-top: 1.5rem;
+  display: flex;
+}
 
 .show_event {
   margin: 1rem 0;
@@ -175,9 +181,10 @@ box-shadow: 0 9px  blue;
 
 .NumberOfEvents {
   width: 200px;
-  margin : 2px auto;
-  
-}/*.alert-container{margin-right: 0;}*/
+  margin: 2px auto;
+}
+
+/*.alert-container{margin-right: 0;}*/
 
 .button-wrapper {
   display: grid;
@@ -188,7 +195,7 @@ box-shadow: 0 9px  blue;
 }
 
 .Alert {
-font-size: 15px;
+  font-size: 15px;
 }
 
 .data-vis-wrapper {
