@@ -1,18 +1,17 @@
 import React from 'react';
 import CitySearch from './CitySearch';
 import './App.css';
-import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
-} from 'recharts';
 import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
-//import Event from './Event';
 import EventGenre from './EventGenre';
 import { Component } from 'react';
 import { OfflineAlert } from './Alert';
 import "./nprogress.css";
-
 import { getEvents, extractLocations } from './api';
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+} from 'recharts';
+
 class App extends Component {
   state = {
     currentLocation: 'all',
@@ -69,6 +68,7 @@ class App extends Component {
     });
     this.updateEvents(currentLocation);
   }
+
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
@@ -78,6 +78,7 @@ class App extends Component {
     })
     return data;
   };
+
   downevents = () => {
     this.setState({
       showevents: !this.state.showevents
@@ -96,6 +97,7 @@ class App extends Component {
           :
           <button className="show-events-button" onClick={this.downevents}>hide events</button>
         }
+
         {this.state.showevents ?
           <div className="data-vis-wrapper">
             <EventGenre events={this.state.events} />

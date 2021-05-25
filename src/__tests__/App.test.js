@@ -1,13 +1,11 @@
 import React from 'react';
- 
 import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
- import NumberOfEvents from '../NumberOfEvents';
- import { shallow, mount } from 'enzyme';
- import { mockData } from '../mock-data';
- 
- import { extractLocations, getEvents } from '../api';
+import NumberOfEvents from '../NumberOfEvents';
+import { shallow, mount } from 'enzyme';
+import { mockData } from '../mock-data';
+import { extractLocations, getEvents } from '../api';
 describe('<App /> component', () => {
   let AppWrapper;
   beforeAll(() => {
@@ -17,12 +15,12 @@ describe('<App /> component', () => {
   test('render list of events', () => {
     expect(AppWrapper.find(EventList)).toHaveLength(1);
   });
-  
+
   test('render CitySearch', () => {
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
   });
 
-    test('render Event', () => {
+  test('render Event', () => {
     expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
   });
 
@@ -60,7 +58,6 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
-  
   test('get list of all events when user selects "See all cities"', async () => {
     const AppWrapper = mount(<App />);
     const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
@@ -70,11 +67,6 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
-
-
-
-
-
   test('App passes "eventsPerPage" state as a prop to NumberOfEvents', () => {
     const AppWrapper = mount(<App />);
     const AppNUmbState = AppWrapper.state('eventsPerPage');
@@ -82,9 +74,5 @@ describe('<App /> integration', () => {
     expect(AppWrapper.find(NumberOfEvents).props().eventsPerPage).toEqual(AppNUmbState);
     AppWrapper.unmount();
   });
-
-  
-
-
 
 });

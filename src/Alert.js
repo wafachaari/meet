@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class Alert extends Component {
   constructor(props) {
     super(props);
@@ -9,10 +10,10 @@ class Alert extends Component {
       color: this.color,
     };
   }
+
   render() {
     return (
-      <div className="Alert"
-      >
+      <div className="Alert" >
         <p style={this.getStyle()}>
           {this.props.text}
         </p>
@@ -28,7 +29,7 @@ class InfoAlert extends Alert {
     return {
       color: this.color,
       fontStyle: 'italic',
-      
+
 
     };
 
@@ -45,10 +46,7 @@ class ErrorAlert extends Alert {
     return {
       color: this.color,
       fontStyle: 'italic',
-      
-
     };
-
   }
 }
 class WarningAlert extends Alert {
@@ -56,8 +54,8 @@ class WarningAlert extends Alert {
     super(props);
     this.color = 'orange'
   }
-
 }
+
 class OfflineAlert extends Alert {
   constructor(props) {
     super(props);
@@ -67,8 +65,6 @@ class OfflineAlert extends Alert {
     return {
       color: this.color,
       fontStyle: 'italic',
-       
-
     };
   }
 }

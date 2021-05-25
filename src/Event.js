@@ -14,7 +14,6 @@ class Event extends Component {
 
   render() {
     const event = this.props.event;
-    //const dateTime = (event.start.dateTime).toDateString();
     const eventISODateTime = new Date(event.start.dateTime);
     const dateTime = eventISODateTime.toDateString();
     return (

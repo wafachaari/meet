@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { ErrorAlert } from './Alert';
+
 class NumberOfEvents extends Component {
   state = {
-    eventsPerPage: 6,
+    eventsPerPage: 32,
   };
 
   handleLength = (event) => {
     const number = event.target.value;
-
     if (number <= 0) {
       this.setState({
         eventsPerPage: number,
@@ -19,26 +19,22 @@ class NumberOfEvents extends Component {
         errorText: ''
       });
     }
-    
     this.props.updateEventCount(number);
   }
 
   render() {
-     
     return (
       <div className="NumberOfEvents">
-       <label>choose number of events</label>
+        <label>choose number of events</label>
         <input
           type="number"
           className="number"
-          placeholder="6"
+          placeholder="32"
           value={this.state.eventsPerPage}
           onChange={this.handleLength}
         />
         <ErrorAlert text={this.state.errorText} />
-
       </div>
-
     );
   }
 }

@@ -20,7 +20,7 @@ const checkToken = async (accessToken) => {
 const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    "https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/token/"  + encodeCode
+    "https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/token/" + encodeCode
   )
     .then((res) => {
       return res.json();
@@ -32,7 +32,7 @@ const getToken = async (code) => {
   return access_token;
 };
 
- 
+
 export const getEvents = async () => {
   NProgress.start();
 
@@ -43,19 +43,19 @@ export const getEvents = async () => {
 
   if (!navigator.onLine) {
     const events = localStorage.getItem("lastEvents");
-    NProgress.done(); 
+    NProgress.done();
     console.log(",,");
     console.log(events);
-      return events?JSON.parse(events).events:[];
-     
-      };
-  
-  
+    return events ? JSON.parse(events).events : [];
+
+  };
+
+
   const token = await getAccessToken();
 
   if (token) {
     removeQuery();
-    const url = "https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/get-events/"  + token;
+    const url = "https://t9htf5lo2c.execute-api.ca-central-1.amazonaws.com/dev/api/get-events/" + token;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
@@ -65,11 +65,11 @@ export const getEvents = async () => {
     NProgress.done();
     return result.data.events;
   }
-  
+
 };
 
 
- export const getAccessToken = async () => {
+export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
   const tokenCheck = accessToken && (await checkToken(accessToken));
 

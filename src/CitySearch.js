@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { InfoAlert } from './Alert';
 class CitySearch extends Component {
   state = {
-  //  query: '',
-    suggestions: [],
+        suggestions: [],
     query: ' ',
-       
-      showSuggestions:false,
-      infoText:''
+    showSuggestions: false,
+    infoText: ''
   }
+
   handleInputChanged = (event) => {
     const value = event.target.value;
-    this.setState({showSuggestions:true});
+    this.setState({ showSuggestions: true });
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
@@ -24,14 +23,10 @@ class CitySearch extends Component {
       return this.setState({
         query: value,
         suggestions,
-        infoText:''
-       
-    });
-  };
-
+        infoText: ''
+      });
+    };
   }
-
-
 
   handleItemClicked = (suggestion) => {
     this.setState({
@@ -44,7 +39,7 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-         <label> choose a city</label>
+        <label> choose a city</label>
         <input
           type="text"
           className="city"
@@ -52,10 +47,10 @@ class CitySearch extends Component {
           onChange={this.handleInputChanged}
           onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
- <InfoAlert text={this.state.infoText}   />
-     
+        <InfoAlert text={this.state.infoText} />
 
-<ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
+
+        <ul className="suggestions" style={this.state.showSuggestions ? {} : { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (
             <li
               key={suggestion}
@@ -63,7 +58,7 @@ class CitySearch extends Component {
             >{suggestion}</li>
           ))}
           <li onClick={() => this.handleItemClicked("all")}>
-             <b>See all cities</b>
+            <b>See all cities</b>
           </li>
         </ul>
       </div >
