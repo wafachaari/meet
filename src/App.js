@@ -18,12 +18,11 @@ class App extends Component {
     events: [],
     locations: [],
     showevents: false,
-    eventsPerPage: 6,
+    eventsPerPage: 32,
   }
   componentDidMount() {
     this.mounted = true;
     const { eventsPerPage } = this.state;
-    // window.addEventListener('online',);
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({
